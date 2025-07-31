@@ -87,10 +87,10 @@ export default function Home() {
               </div>
 
               {/* English Toggle Button */}
-              <div className="absolute top-0 right-0">
+              <div className="absolute top-0 right-0 z-50">
                 <Link
                   href="/English"
-                  className="flex items-center gap-2 justify-center min-w-[120px] text-white font-semibold py-2.5 px-5 text-sm rounded-full border border-white/30 backdrop-blur-sm hover:bg-yellow-500/20 transition-all duration-300 ease-in-out overflow-hidden"
+                  className="pointer-events-auto flex items-center gap-2 justify-center min-w-[120px] text-white font-semibold py-2.5 px-5 text-sm rounded-full border border-white/30 backdrop-blur-sm hover:bg-yellow-500/20 transition-all duration-300 ease-in-out overflow-hidden"
                   data-aos="fade-up"
                 >
                   <Image
