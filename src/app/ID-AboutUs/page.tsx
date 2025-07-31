@@ -60,7 +60,7 @@ const IDAboutUs = () => {
             {/* Button*/}
               <Link
                 className="relative w-full text-center text-white font-semibold transition-all duration-300 ease-in-out overflow-hidden py-3 px-6 text-[18px] lg:text-[24px] rounded-full max-w-sm z-0 hover:bg-green-500/20 focus:bg-green-500/30 backdrop-blur-sm border border-white/30"
-                href="/ID-AboutUs"
+                href="/ID-Galery"
               >
                 <LiquidGlassFilters />
                 <span className="relative z-10">Jelajahi Galeri Kami!</span>
