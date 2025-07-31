@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+  },
   images: {
     remotePatterns: [
       {
@@ -8,8 +10,8 @@ const nextConfig: NextConfig = {
         hostname: "placehold.co",
         port: "",
       },
-    ]
-  }
-}
+    ],
+  },
+};
 
 export default nextConfig;
