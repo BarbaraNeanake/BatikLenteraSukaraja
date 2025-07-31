@@ -40,7 +40,7 @@ export default function Home() {
               </h2>
 
               <Link
-                href="/EN-AboutUs"
+                href="/ENG-AboutUs"
                 className="relative w-full max-w-xs text-center text-white font-semibold py-3 px-6 text-base sm:text-lg lg:text-xl rounded-full border border-white/30 backdrop-blur-sm hover:bg-green-500/20 transition-all duration-300 ease-in-out overflow-hidden z-10"
               >
                 <LiquidGlassFilters />
