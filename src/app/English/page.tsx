@@ -6,105 +6,86 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center lg:items-start :justify-start w-full h-fit z-0">
-      <div className="relative flex w-full h-full">
-        <div className="relative flex min-h-screen w-full items-center justify-center bg-[url(/hero/batik.gif)] bg-bottom bg-cover bg-no-repeat">          
-        <div className="w-full h-full bg-gradient-to-r from-black to-transparent absolute z-[0]"></div>
-          <div className="lg:px-[127px] lg:py-[83px] p-10 gap-x-10 gap-y-5 lg:gap-y-0 flex flex-col lg:flex-row justify-start items-start">
-            <div className="lg:w-1/2 flex flex-col lg:gap-y-10 gap-y-5 relative z-0">
-              <div className="flex flex-row">
-                <h1
-                  className="font-plus-jakarta-sans font-medium text-start lg:text-start text-[40px] lg:text-[70px] text-white flex-grow"
+    <div className="flex flex-col items-center w-full min-h-screen overflow-x-hidden">
+      <div className="relative w-full overflow-hidden">
+        {/* Background Section */}
+        <div className="relative flex min-h-screen w-full items-center justify-center bg-[url(/hero/batik.gif)] bg-bottom bg-cover bg-no-repeat">
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-black to-transparent z-0" />
+
+          {/* Main Content */}
+          <div className="px-6 py-10 lg:px-[127px] lg:py-[83px] flex flex-col lg:flex-row gap-10 items-start w-full z-10 max-w-screen">
+            {/* Kiri */}
+            <div className="lg:w-1/2 w-full flex flex-col gap-y-6">
+              <h1
+                className="font-plus-jakarta-sans font-medium text-white text-3xl sm:text-4xl md:text-5xl lg:text-[70px] leading-tight"
+                data-aos="fade-up"
+              >
+                Welcome to
+                <br />
+                <span className="font-black">BATIK LENTERA SUKARAJA</span>
+              </h1>
+              <p
+                className="font-plus-jakarta-sans font-normal text-sm sm:text-base md:text-lg text-white text-justify"
+                data-aos="fade-up"
+              >
+                Batik Lentera is a local micro-enterprise (UMKM) committed to preserving Indonesian batik culture through high-quality products made with love and dedication. We are located in Sukaraja Village, Sepaku, North Penajam Paser, East Kalimantan. We believe that every piece of batik is a work of art that carries rich cultural values and traditions. With this spirit, we are dedicated to continuously innovating and offering batik products that are not only beautiful but also meaningful.
+              </p>
+
+              <h2
+                className="font-plus-jakarta-sans font-bold text-xl sm:text-2xl md:text-3xl lg:text-[70px] text-white text-center lg:text-start leading-tight"
+                data-aos="fade-up"
+              >
+                “A Living Work of Art from Tradition”
+              </h2>
+
+              <Link
+                href="/EN-AboutUs"
+                className="relative w-full max-w-xs text-center text-white font-semibold py-3 px-6 text-base sm:text-lg lg:text-xl rounded-full border border-white/30 backdrop-blur-sm hover:bg-green-500/20 transition-all duration-300 ease-in-out overflow-hidden z-10"
+              >
+                <LiquidGlassFilters />
+                <span className="relative z-10">Get to Know Us Better</span>
+              </Link>
+            </div>
+
+            {/* Kanan */}
+            <div className="lg:w-1/2 w-full flex flex-col items-start gap-6 relative">
+              {/* Tombol Navigasi */}
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full z-10">
+                {[
+                  { label: "ABOUT US", href: "/ENG-AboutUs" },
+                  { label: "GALLERY", href: "/ENG-Galery" },
+                  { label: "CONTACT US", href: "/ENG-Contact" },
+                ].map(({ label, href }) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    className="relative w-full sm:w-auto text-center text-white font-semibold py-3 px-6 text-base sm:text-lg rounded-full border border-white/30 backdrop-blur-sm hover:bg-yellow-500/20 transition-all duration-300 ease-in-out overflow-hidden"
+                    data-aos="fade-up"
+                  >
+                    <LiquidGlassFilters />
+                    <span className="relative z-10">{label}</span>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Indo Toggle Button */}
+              <div className="w-full flex justify-center sm:justify-end mt-4 z-10">
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 justify-center min-w-[120px] text-white font-semibold py-2.5 px-5 text-sm rounded-full border border-white/30 backdrop-blur-sm hover:bg-yellow-500/20 transition-all duration-300 ease-in-out overflow-hidden"
                   data-aos="fade-up"
                 >
-                  Welcome to
-                  <br />
-                  <span className="font-black">BATIK LENTERA SUKARAJA</span>
-                </h1>
-                <div className="block lg:hidden">
-                </div>
+                  <Image
+                    src="/icon/id-flag.png"
+                    alt="English"
+                    width={20}
+                    height={20}
+                    className="rounded-sm"
+                  />
+                  <span className="relative z-10">INDONESIA</span>
+                </Link>
               </div>
-              <p
-                className="font-plus-jakarta-sans font-normal text-[18px] lg:text-[20px] text-white text-justify text-sm/relaxed"
-                data-aos="fade-up"
-              >
-                loremipsum<br />
-                loremipsum<br />
-                loremipsum<br />
-                loremipsum<br />
-                loremipsum<br />
-                loremipsum<br />
-                loremipsum<br />
-                loremipsum
-              </p>
-              <h2
-                className="font-plus-jakarta-sans text-[30px] text-center lg:text-start lg:text-[70px] text-white font-bold lg:leading-none"
-                data-aos="fade-up"
-              >
-                “Art that Lives Through Tradition”
-              </h2>
-              {/* Button*/}
-              <Link
-                className="relative w-full text-center text-white font-semibold transition-all duration-300 ease-in-out overflow-hidden py-3 px-6 text-[18px] lg:text-[24px] rounded-full max-w-sm z-0 hover:bg-green-500/20 focus:bg-green-500/30 backdrop-blur-sm border border-white/30"
-                href="/ENG-AboutUs"
-              >
-                <LiquidGlassFilters />
-                <span className="relative z-10">Get to know us better!</span>
-              </Link>
-            </div>
-
-            <div className="lg:w-1/2 w-auto flex flex-col lg:flex-row lg:justify-start lg:items-start justify-center items-center gap-y-5 lg:gap-x-5 z-0">
-            
-            {/* Sticky Button Bar */}
-            <div className="sticky top-6 z-30 flex gap-4 justify-start px-6">
-              {/* TENTANG KAMI */}
-              <Link
-                className="relative min-w-[160px] text-center text-white font-semibold transition-all duration-300 ease-in-out overflow-hidden py-3 px-6 text-lg rounded-full hover:bg-yellow-500/20 focus:bg-yellow-500/30 backdrop-blur-sm border border-white/30"
-                href="/ENG-AboutUs"
-                data-aos="fade-up"
-              >
-                <LiquidGlassFilters />
-                <span className="relative z-10">ABOUT US</span>
-              </Link>
-
-              {/* GALERI */}
-              <Link
-                className="relative min-w-[160px] text-center text-white font-semibold transition-all duration-300 ease-in-out overflow-hidden py-3 px-6 text-lg rounded-full hover:bg-yellow-500/20 focus:bg-yellow-500/30 backdrop-blur-sm border border-white/30"
-                href="/ENG-Galery"
-                data-aos="fade-up"
-              >
-                <LiquidGlassFilters />
-                <span className="relative z-10">GALLERY</span>
-              </Link>
-
-              {/* CONTACT US */}
-              <Link
-                className="relative min-w-[160px] text-center text-white font-semibold transition-all duration-300 ease-in-out overflow-hidden py-3 px-6 text-lg rounded-full hover:bg-yellow-500/20 focus:bg-yellow-500/30 backdrop-blur-sm border border-white/30"
-                href="/ENG-Contact"
-                data-aos="fade-up"
-              >
-                <LiquidGlassFilters />
-                <span className="relative z-10">CONTACT US</span>
-              </Link>
-            </div>
-
-            {/* Tombol INDO Terpisah di Pojok Kanan */}
-            <div className="absolute top-6 right-6 z-20">
-              <Link
-                href="/"
-                className="flex items-center gap-2 min-w-[130px] justify-center text-white font-semibold transition-all duration-300 ease-in-out overflow-hidden py-2.5 px-5 text-sm rounded-full hover:bg-yellow-500/20 focus:bg-yellow-500/30 backdrop-blur-sm border border-white/30"
-                data-aos="fade-up"
-              >
-                <Image
-                  src="/icon/id-flag.png"
-                  alt="English"
-                  width={20}
-                  height={20}
-                  className="rounded-sm"
-                />
-                <span className="relative z-10">INDONESIA</span>
-              </Link>
-            </div>
             </div>
           </div>
         </div>
