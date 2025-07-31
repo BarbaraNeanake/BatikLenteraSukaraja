@@ -1,13 +1,21 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    // Add any other directories where you use Tailwind classes
+    './app/**/*.{ts,tsx}', 
+    './components/**/*.{ts,tsx}', 
+    './pages/**/*.{ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        vibes: ["var(--font-vibes)"],
+        plus: ["var(--font-plus-jakarta-sans)"],
+        unbounded: ["var(--font-unbounded)"],
+      },
+    },
   },
   plugins: [],
-}
+};
+
+export default config;
